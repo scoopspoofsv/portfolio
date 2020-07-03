@@ -18,13 +18,10 @@
     }
 }
 
-div {
+.profession {
     font-size: 8rem;
     font-weight: 600;
     color: var(--black-color);
-}
-
-.profession {
     animation: slide-in-from-down 0.5s ease 0.5s forwards;
     transform: translateY(60%);
     opacity: 0;
@@ -53,7 +50,7 @@ div {
     .full-name {
         font-size: 1.8rem;
     }
-    div {
+    .profession {
         font-size: 5rem;
     }
 }
