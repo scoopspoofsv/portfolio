@@ -1,0 +1,59 @@
+.full-name {
+    margin-top: 15rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    color: var(--black-color);
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    animation: reveal 0.5s ease 1s forwards;
+    .bar {
+        position: absolute;
+        width: 0;
+        height: 4rem;
+        background-color: var(--primary);
+        top: 0;
+        animation: fill-in 1s ease 0.5s forwards;
+    }
+}
+
+div {
+    font-size: 8rem;
+    font-weight: 600;
+    color: var(--black-color);
+}
+
+.profession {
+    animation: slide-in-from-down 0.5s ease 0.5s forwards;
+    transform: translateY(60%);
+    opacity: 0;
+}
+
+@keyframes slide-in-from-down {
+    to {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes fill-in {
+    50% {
+        width: 40rem;
+    }
+}
+
+@keyframes reveal {
+    to {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    .full-name {
+        font-size: 1.8rem;
+    }
+    div {
+        font-size: 5rem;
+    }
+}

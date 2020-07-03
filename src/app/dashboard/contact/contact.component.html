@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="heading lead">
+        <h2>Say hello</h2>
+        <div class="bar"></div>
+        <div class="bottom-line lead"></div>
+    </div>
+    <form #customerForm="ngForm">
+        <div class="form-group">
+            <input type="text" required name="name" id="name" placeholder="name" [(ngModel)]="customer.fullName" #fullName="ngModel" class="form-control">
+            <label for="name">Your Name</label>
+            <div *ngIf="fullName.invalid && fullName.touched">Name is Required!</div>
+        </div>
+        <div class="form-group">
+            <input type="email" required name="email" id="email" placeholder="email" [(ngModel)]="customer.email" #email="ngModel" class="form-control">
+            <label for="name">Your Email</label>
+            <div *ngIf="email.invalid && email.touched">Email is Required!</div>
+        </div>
+        <div class="form-group">
+            <input type="text" required name="message" id="message" placeholder="message" [(ngModel)]="customer.message" #message="ngModel" class="form-control">
+            <label for="name">Your Message</label>
+            <div *ngIf="message.invalid && message.touched">Message is Required!</div>
+        </div>
+        <button class="primary" [routerLink]="['/final']" [disabled]="customerForm.invalid" skipLocationChange>Submit <i class="lab la-telegram"></i></button>
+    </form>
+</div>

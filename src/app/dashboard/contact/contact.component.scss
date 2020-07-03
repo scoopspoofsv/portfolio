@@ -1,0 +1,105 @@
+.heading {
+    margin-top: 5rem;
+    position: relative;
+    h2 {
+        color: var(--black-color);
+        font-size: 3rem;
+        opacity: 0;
+        animation: reveal 0.5s ease 1s forwards;
+    }
+    .bar {
+        position: absolute;
+        height: 4rem;
+        background-color: var(--primary);
+        top: 0;
+        width: 0;
+        animation: fill-in 1s ease forwards;
+    }
+}
+
+form {
+    padding-top: 4rem;
+    width: 50rem;
+    opacity: 0;
+    transform: translateX(-10rem);
+    animation: reveal 0.5s ease 0.5s forwards;
+}
+
+.form-group {
+    // margin: 0 auto;
+    position: relative;
+    margin-bottom: 5rem;
+    label {
+        display: block;
+        color: var(--medium);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.3s all ease;
+    }
+    input {
+        width: 100%;
+        height: 4rem;
+        border: none;
+        border-bottom: 0.1rem solid var(--primary);
+        outline: none;
+        background-color: rgba($color: #000000, $alpha: 0.0);
+        color: var(--medium);
+        &::placeholder {
+            color: transparent;
+        }
+        &:focus,
+        &:not(:placeholder-shown) {
+            border-bottom: 0.1rem solid var(--primary);
+            +label {
+                top: -30%;
+                font-size: 1.3rem;
+                // color: var(--light-color);
+                filter: brightness(50%);
+            }
+        }
+    }
+    div {
+        position: absolute;
+        color: var(--medium);
+        font-size: 1rem;
+        top: 120%;
+    }
+}
+
+button {
+    color: var(--light);
+    background-color: var(--primary);
+    border: 0.1rem solid var(--primary);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    &:disabled {
+        color: var(--medium);
+        background-color: var(--light);
+        cursor: not-allowed;
+    }
+}
+
+@keyframes fill-in {
+    50% {
+        width: 25rem;
+    }
+}
+
+@keyframes reveal {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    .heading {
+        margin-top: 2rem;
+    }
+    form {
+        width: 25rem;
+        height: 5rem;
+    }
+}

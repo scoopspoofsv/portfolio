@@ -1,0 +1,39 @@
+<header fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="space-between center" fxLayoutAlign.lt-md="flex-end center" fxLayoutGap="5rem">
+    <div class="logo">
+        <a [routerLink]="['']"><img src="../../../../assets/images/logo.png" alt=""></a>
+    </div>
+    <nav>
+        <ul fxLayout="column" fxLayout.lt-sm="row" fxLayoutGap="8rem" fxLayoutGap.lt-sm="2rem">
+            <li><a class="nav-link" [routerLink]="['']">Home</a></li>
+            <li><a class="nav-link" [routerLink]="['/about']">About</a></li>
+            <li><a class="nav-link" [routerLink]="['/projects']">Projects</a></li>
+            <li><a class="nav-link" [routerLink]="['/contact']">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler" id="closeIcon">
+        <div class="hamburger">
+            <div></div>
+        </div>
+        <div class="menu">
+            <div>
+                <div>
+                    <div class="wrap-logo">
+                        <a [routerLink]="['']"><img src="../../../../assets/images/logo.png" alt=""></a>
+                    </div>
+                    <ul id="menu-links">
+                        <li><a class="nav-link" [routerLink]="['']">Home</a></li>
+                        <li><a class="nav-link" [routerLink]="['/about']">About</a></li>
+                        <li><a class="nav-link" [routerLink]="['/projects']">Projects</a></li>
+                        <li><a class="nav-link" [routerLink]="['/contact']">Contact</a></li>
+                    </ul>
+                    <app-footer></app-footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a (click)="toggleTheme()" fxFlex="8%" class="theme"><i class="las la-adjust la-2x"></i></a>
+
+    <app-footer class="footer"></app-footer>
+
+</header>

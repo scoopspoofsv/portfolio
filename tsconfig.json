@@ -3,6 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "types" : ["jquery"],
+    "typeRoots": [ "node_modules/@types" ],
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,

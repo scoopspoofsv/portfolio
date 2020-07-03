@@ -1,0 +1,25 @@
+// app-header {
+//     height: 50vh;
+// }
+div {
+    margin-top: 2rem;
+}
+
+app-header {
+    position: fixed;
+}
+
+a {
+    position: sticky;
+    top: 1rem;
+}
+
+@media only screen and (max-width: 959px) {
+    app-header {
+        position: static;
+        width: 100%;
+    }
+    a {
+        display: none;
+    }
+}

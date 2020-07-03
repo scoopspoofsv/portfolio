@@ -1,0 +1,121 @@
+.heading {
+    margin-top: 5rem;
+    position: relative;
+    h2 {
+        color: var(--black-color);
+        font-size: 3rem;
+        // transform: translateX(5rem);
+        opacity: 0;
+        animation: reveal 0.5s ease 1s forwards;
+    }
+    .bar {
+        position: absolute;
+        height: 4rem;
+        background-color: var(--primary);
+        top: 0;
+        width: 0;
+        animation: fill-in 1s ease forwards;
+    }
+}
+
+.display-picture {
+    width: 40rem;
+    height: 40rem;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 0.1rem solid var(--primary);
+    position: relative;
+    animation: slide-in-from-right 0.5s ease 0.5s forwards;
+    opacity: 0;
+    transform: translateX(10%);
+    .resume {
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--white-color);
+        padding: 1rem 2rem;
+        border: 0.1rem solid var(--dark);
+        border-bottom-right-radius: 1rem;
+    }
+    img {
+        display: block;
+        width: 40rem;
+        transition: all 0.3s ease;
+    }
+    &:hover {
+        img {
+            transform: scale(1.1);
+            filter: blur(0.3rem) brightness(80%);
+        }
+        .resume {
+            display: block;
+        }
+    }
+}
+
+.about {
+    .description {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        color: var(--medium);
+        animation: slide-in-from-left 0.5s ease 1s forwards;
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+}
+
+@keyframes slide-in-from-left {
+    to {
+        opacity: 100%;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-from-right {
+    to {
+        opacity: 100%;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fill-in {
+    50% {
+        width: 25rem;
+    }
+}
+
+@keyframes reveal {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    .heading {
+        margin-top: 2rem;
+    }
+    .display-picture {
+        width: 30rem;
+        height: 30rem;
+        img {
+            width: 30rem;
+        }
+    }
+    .about {
+        .description {
+            margin: 2rem 0;
+            text-align: center;
+        }
+    }
+    .display-picture {
+        .resume {
+            font-size: 1.5rem;
+            width: 60%;
+            text-align: center;
+        }
+    }
+}

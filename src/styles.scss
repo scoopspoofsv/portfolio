@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./assets/styles/colors";
+// CSS RESET
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--white-color);
+    transition: color 0.5s ease;
+    transition: background-color 0.5s ease;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1280px;
+    padding: 0 2rem;
+    margin: 0 auto;
+    padding-left: 10rem;
+}
+
+.lead {
+    margin-bottom: 2.4rem;
+    &-large {
+        margin-bottom: 4rem;
+    }
+}
+
+.bottom-line {
+    width: 100%;
+    height: 0.1rem;
+    overflow: hidden;
+    background-color: var(--light);
+    border-bottom: 0.1rem solid var(--primary);
+    &-small {
+        @extend .bottom-line;
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
